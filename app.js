@@ -14,7 +14,6 @@ app.listen(process.env.PORT, () => {
 
 app.post("/signature", jsonParser, (req, res) => {
   const { username, pin } = req.body;
-  console.log(req.body);
   if (!username || username == "")
     res.status(400).json({ message: "Bad Request: The username is invalid" });
   if (pin == process.env.PIN) {
